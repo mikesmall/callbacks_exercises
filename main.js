@@ -21,7 +21,7 @@ var transactions = [
   {
     type: 'purchase',
     paymentMethod: 'credit',
-    vendor: 'Dick\'s Doodads',
+    vendor: "Dick's Doodads",
     items: [
       { name: 'XL Doodad', price: -3.00 },
       { name: 'XS Doodad', price: -0.50 }
@@ -84,7 +84,7 @@ var transactions = [
   {
     type: 'purchase',
     paymentMethod: 'credit',
-    vendor: 'Dick\'s Doodads',
+    vendor: "Dick's Doodads",
     items: [
       { name: 'XL Doodad', price: -3.00 },
       { name: 'XL Doodad', price: -3.00 },
@@ -225,7 +225,13 @@ console.log( '(04) The total number of credit purchases is:', numCreditPurchases
   - The assembled array should be made up of strings, not full `transaction` objects.
   - This array is allowed to contain duplicate values.
 */
-var uniqueVendors;
+
+function getVendors(transaction) {
+  return transaction.vendor;
+  // uniqueVendors.push(vendor)
+}
+
+var uniqueVendors = transactions.filter(getVendors).map(getVendors);
 
 console.log( '(05) The unique vendors are:', uniqueVendors );
 
