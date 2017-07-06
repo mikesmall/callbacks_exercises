@@ -108,7 +108,6 @@ var transactions = [
   }
 ];
 
-
 // --------------------------------------------------
 // EXAMPLE_QUESTION
 // --------------------------------------------------
@@ -118,7 +117,6 @@ var transactions = [
 var totalTransactions = transactions.length;
 
 console.log( 'The total number of transactions is: ', totalTransactions );
-
 
 // --------------------------------------------------
 // _QUESTION 01
@@ -158,17 +156,21 @@ var numSales = transactions.filter(getSales).length;
 
 console.log( 'The total number of sales is:', numSales );
 
-
 // --------------------------------------------------
 // _QUESTION 02
 // --------------------------------------------------
 /*
   Calculate the total number of 'purchases'.
 */
-var numPurchases;
 
+function getPurchases(transaction) {
+  return transaction.type == 'purchase';
+}
+
+var numPurchases = transactions.filter(getPurchases).length;
+
+// Output should be 5:
 console.log( 'The total number of purchases is:', numPurchases );
-
 
 // --------------------------------------------------
 // _QUESTION 03
