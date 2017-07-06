@@ -108,6 +108,9 @@ var transactions = [
   }
 ];
 
+// Just for ease of Terminal viewing:
+console.log( '============================================================' )
+
 // --------------------------------------------------
 // EXAMPLE_QUESTION
 // --------------------------------------------------
@@ -116,7 +119,7 @@ var transactions = [
 */
 var totalTransactions = transactions.length;
 
-console.log( 'The total number of transactions is: ', totalTransactions );
+console.log( '(ex) The total number of transactions is: ', totalTransactions );
 
 // --------------------------------------------------
 // _QUESTION 01
@@ -154,7 +157,7 @@ var numSales = transactions.filter(getSales).length;
 */
 // (Output should be 5)
 
-console.log( 'The total number of sales is:', numSales );
+console.log( '(01) The total number of sales is:', numSales );
 
 // --------------------------------------------------
 // _QUESTION 02
@@ -170,7 +173,7 @@ function getPurchases(transaction) {
 var numPurchases = transactions.filter(getPurchases).length;
 
 // Output should be 5:
-console.log( 'The total number of purchases is:', numPurchases );
+console.log( '(02) The total number of purchases is:', numPurchases );
 
 // --------------------------------------------------
 // _QUESTION 03
@@ -186,9 +189,9 @@ function getCashSales(transaction) {
   return transaction.type == 'sale' && transaction.paymentMethod == 'cash';
 }
 
-var numCashSales = transactions.filter(getSales).length;
+var numCashSales = transactions.filter(getCashSales).length;
 
-console.log( 'The total number of cash sales is:', numCashSales );
+console.log( '(03) The total number of cash sales is:', numCashSales );
 
 
 // --------------------------------------------------
@@ -200,9 +203,14 @@ console.log( 'The total number of cash sales is:', numCashSales );
   HINT(S):
   - Make sure to exclude any 'sales' made by 'credit'!
 */
-var numCreditPurchases;
 
-console.log( 'The total number of credit purchases is:', numCreditPurchases );
+function getCreditPurchases(transaction) {
+  return transaction.type == 'purchase' && transaction.paymentMethod == 'credit';
+}
+
+var numCreditPurchases = transactions.filter(getCreditPurchases).length;
+
+console.log( '(04) The total number of credit purchases is:', numCreditPurchases );
 
 
 // --------------------------------------------------
@@ -219,7 +227,7 @@ console.log( 'The total number of credit purchases is:', numCreditPurchases );
 */
 var uniqueVendors;
 
-console.log( 'The unique vendors are:', uniqueVendors );
+console.log( '(05) The unique vendors are:', uniqueVendors );
 
 
 // --------------------------------------------------
@@ -236,7 +244,7 @@ console.log( 'The unique vendors are:', uniqueVendors );
 */
 var uniqueCustomers;
 
-console.log( 'The unique customers are:', uniqueCustomers );
+console.log( '(06) The unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
@@ -254,7 +262,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 */
 var bigSpenders;
 
-console.log( 'The "big spenders" are:', bigSpenders );
+console.log( '(07) The "big spenders" are:', bigSpenders );
 
 
 // --------------------------------------------------
@@ -268,7 +276,7 @@ console.log( 'The "big spenders" are:', bigSpenders );
 */
 var sumSales;
 
-console.log( 'The sum of all sales is:', sumSales );
+console.log( '(08) The sum of all sales is:', sumSales );
 
 
 // --------------------------------------------------
@@ -284,7 +292,7 @@ console.log( 'The sum of all sales is:', sumSales );
 
 var sumPurchases;
 
-console.log( 'The sum of all purhcases is:', sumPurchases );
+console.log( '(09) The sum of all purhcases is:', sumPurchases );
 
 
 // --------------------------------------------------
@@ -302,7 +310,7 @@ console.log( 'The sum of all purhcases is:', sumPurchases );
 */
 var netProfit;
 
-console.log( 'The net profit is:', netProfit );
+console.log( '(10) The net profit is:', netProfit );
 
 
 // --------------------------------------------------
@@ -316,7 +324,7 @@ console.log( 'The net profit is:', netProfit );
 */
 var mostItems;
 
-console.log( 'The most items sold in a single transaction is:', mostItems );
+console.log( '(11) The most items sold in a single transaction is:', mostItems );
 
 
 // --------------------------------------------------
@@ -327,4 +335,7 @@ console.log( 'The most items sold in a single transaction is:', mostItems );
 */
 var sumOfSmallestPurchase;
 
-console.log( 'The sum of the smallest purchase is:', sumOfSmallestPurchase );
+console.log( '(12) The sum of the smallest purchase is:', sumOfSmallestPurchase );
+
+// Just for ease of Terminal viewing:
+console.log( '============================================================' )
