@@ -110,18 +110,18 @@ var transactions = [
 
 
 // --------------------------------------------------
-// EXAMPLE QUESTION
+// EXAMPLE_QUESTION
 // --------------------------------------------------
 /*
   Calculate the total number of transactions.
 */
 var totalTransactions = transactions.length;
 
-console.log( 'The total number of transactions is:', totalTransactions );
+console.log( 'The total number of transactions is: ', totalTransactions );
 
 
 // --------------------------------------------------
-// QUESTION 01
+// _QUESTION 01
 // --------------------------------------------------
 /*
   Calculate the total number of 'sales'.
@@ -129,7 +129,12 @@ console.log( 'The total number of transactions is:', totalTransactions );
   HINT(S):
   - Not all transactions are 'sales'.
 */
-var numSales;
+
+function getSales(transaction) {
+  return transaction.type == 'sale';
+}
+
+var numSales = transactions.filter(getSales).length;
 
 /*
   Hey, welcome to the first question!
@@ -149,12 +154,13 @@ var numSales;
   P.S.
   The breakdown above takes up a lot of space, feel free to move it to the top or bottom of the file!
 */
+// (Output should be 5)
 
 console.log( 'The total number of sales is:', numSales );
 
 
 // --------------------------------------------------
-// QUESTION 02
+// _QUESTION 02
 // --------------------------------------------------
 /*
   Calculate the total number of 'purchases'.
@@ -165,7 +171,7 @@ console.log( 'The total number of purchases is:', numPurchases );
 
 
 // --------------------------------------------------
-// QUESTION 03
+// _QUESTION 03
 // --------------------------------------------------
 /*
   Calculate the total number of 'cash' 'sales'.
@@ -179,7 +185,7 @@ console.log( 'The total number of cash sales is:', numCashSales );
 
 
 // --------------------------------------------------
-// QUESTION 04
+// _QUESTION 04
 // --------------------------------------------------
 /*
   Calculate the total number of 'credit' 'purchases'.
@@ -193,7 +199,7 @@ console.log( 'The total number of credit purchases is:', numCreditPurchases );
 
 
 // --------------------------------------------------
-// QUESTION 05
+// _QUESTION 05
 // --------------------------------------------------
 /*
   Create an array that includes all of vendors which appear in the transactions data set.
@@ -210,7 +216,7 @@ console.log( 'The unique vendors are:', uniqueVendors );
 
 
 // --------------------------------------------------
-// QUESTION 06
+// _QUESTION 06
 // --------------------------------------------------
 /*
   Create an array that includes all of *unique* customers which appear in the transactions data set.
@@ -227,7 +233,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
-// QUESTION 07
+// _QUESTION 07
 // --------------------------------------------------
 /*
   Create an array of information about the 'sale' transactions which include 5 or more items.
@@ -245,7 +251,7 @@ console.log( 'The "big spenders" are:', bigSpenders );
 
 
 // --------------------------------------------------
-// QUESTION 08
+// _QUESTION 08
 // --------------------------------------------------
 /*
   Calculate the sum of the *first* 'sale' transaction.
@@ -259,7 +265,7 @@ console.log( 'The sum of all sales is:', sumSales );
 
 
 // --------------------------------------------------
-// QUESTION 09
+// _QUESTION 09
 // --------------------------------------------------
 /*
   Calculate the sum of *all* 'purchase' transactions.
@@ -275,7 +281,7 @@ console.log( 'The sum of all purhcases is:', sumPurchases );
 
 
 // --------------------------------------------------
-// QUESTION 10
+// _QUESTION 10
 // --------------------------------------------------
 /*
   Calculate the company's net profit.
@@ -293,7 +299,7 @@ console.log( 'The net profit is:', netProfit );
 
 
 // --------------------------------------------------
-// QUESTION 11
+// _QUESTION 11
 // --------------------------------------------------
 /*
   Calculate the most items sold as part of single transaction.
@@ -307,7 +313,7 @@ console.log( 'The most items sold in a single transaction is:', mostItems );
 
 
 // --------------------------------------------------
-// QUESTION 12
+// _QUESTION 12
 // --------------------------------------------------
 /*
   Calculate the sum of the 'purchase' with the fewest items.
