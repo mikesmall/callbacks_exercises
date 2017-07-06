@@ -193,7 +193,6 @@ var numCashSales = transactions.filter(getCashSales).length;
 
 console.log( '(03) The total number of cash sales is:', numCashSales );
 
-
 // --------------------------------------------------
 // _QUESTION 04
 // --------------------------------------------------
@@ -211,7 +210,6 @@ function getCreditPurchases(transaction) {
 var numCreditPurchases = transactions.filter(getCreditPurchases).length;
 
 console.log( '(04) The total number of credit purchases is:', numCreditPurchases );
-
 
 // --------------------------------------------------
 // _QUESTION 05
@@ -235,7 +233,6 @@ var uniqueVendors = transactions.filter(getVendors).map(getVendors);
 
 console.log( '(05) The unique vendors are:', uniqueVendors );
 
-
 // --------------------------------------------------
 // _QUESTION 06
 // --------------------------------------------------
@@ -248,10 +245,18 @@ console.log( '(05) The unique vendors are:', uniqueVendors );
   - The assembled array should be made up of strings, not full `transaction` objects.
   - Make sure that the resulting array *does not* include any duplicates.
 */
-var uniqueCustomers;
+
+function getCustomers(transaction) {
+  return transaction.customer;
+}
+
+function noDoubles(item, index, array) {
+     return array.indexOf(item) == index;
+}
+
+var uniqueCustomers = transactions.filter(getCustomers).map(getCustomers).filter(noDoubles);
 
 console.log( '(06) The unique customers are:', uniqueCustomers );
-
 
 // --------------------------------------------------
 // _QUESTION 07
