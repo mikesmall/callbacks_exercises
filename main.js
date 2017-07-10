@@ -323,11 +323,10 @@ function transactionTotal (sum, value) {
 function addPrices(sum, value){
   return (value * -1) + sum;
 }
-// Summoning 'getPurchases' function from question 02 here:
+// Summoning 'getPurchases' function from Question 02 here:
 var sumPurchases = transactions.filter(getPurchases).map(getPurchaseItems).reduce(addPrices, 0)
 
 console.log( '(09) The sum of all purhcases is: $', sumPurchases.toFixed(2) );
-
 
 // --------------------------------------------------
 // _QUESTION 10
@@ -342,9 +341,18 @@ console.log( '(09) The sum of all purhcases is: $', sumPurchases.toFixed(2) );
   HINT(S):
   - Unlike '_QUESTION 08' and '_QUESTION 09', here we're interested in both 'sale' and 'purchase' transactions.
 */
-var netProfit;
+function getSaleItems(transaction){
+  return transaction.items.reduce(transactionTotal, 0);
+}
 
-console.log( '(10) The net profit is:', netProfit );
+function addPosPrices(sum, value) {
+  return value + sum;
+}
+// Calling 'getSales' function from Question 01,
+// and 'sumPurchases' function from Question 09:
+var netProfit = transactions.filter(getSales).map(getSaleItems).reduce(addPosPrices, 0)- sumPurchases;
+
+console.log( '(10) The net profit is: $', netProfit.toFixed(2) );
 
 
 // --------------------------------------------------
