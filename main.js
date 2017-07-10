@@ -271,10 +271,15 @@ console.log( '(06) The unique customers are:', uniqueCustomers );
   - There may be more than 1 'sale' that includes 5 or more items.
   - Individual transactions do not have either `name` or `numItems` properties, we'll have to add them to the output.
 */
-var bigSpenders;
+function fivePlusTrans(transaction) {
+  if (transaction.items.length >= 5 && transaction.type === 'sale'){
+    return { name: transaction.customer, numItems: transaction.items.length};
+  }
+}
+
+var bigSpenders = transactions.filter(fivePlusTrans).map(fivePlusTrans)
 
 console.log( '(07) The "big spenders" are:', bigSpenders );
-
 
 // --------------------------------------------------
 // _QUESTION 08
@@ -285,9 +290,15 @@ console.log( '(07) The "big spenders" are:', bigSpenders );
   HINT(S):
   - Transactions don't have 'prices', but their 'items' do!
 */
-var sumSales;
+function firstSaleSum(transactions) {
+    return [transactions[0].items[0].price, transactions[0].items[1].price];
+}
 
-console.log( '(08) The sum of all sales is:', sumSales );
+var sumSales = firstSaleSum(transactions).reduce(function(sum, value) {
+    return sum + value;
+  }, 0);
+
+console.log( '(08) The sum of all sales is: $', sumSales.toFixed(2) );
 
 
 // --------------------------------------------------
