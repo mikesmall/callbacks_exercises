@@ -308,13 +308,25 @@ console.log( '(08) The sum of all sales is: $', sumSales.toFixed(2) );
   Calculate the sum of *all* 'purchase' transactions.
 
   HINT(S):
-  - Your solution to 'QUESTION 08' is a good starting point!
+  - Your solution to '_QUESTION 08' is a good starting point!
   - Make sure to include 'price' information from *all* purchases.
 */
 
-var sumPurchases;
+function getPurchaseItems(transaction){
+  return transaction.items.reduce(transactionTotal, 0);
+}
 
-console.log( '(09) The sum of all purhcases is:', sumPurchases );
+function transactionTotal (sum, value) {
+  return value.price + sum
+}
+
+function addPrices(sum, value){
+  return (value * -1) + sum;
+}
+// Summoning 'getPurchases' function from question 02 here:
+var sumPurchases = transactions.filter(getPurchases).map(getPurchaseItems).reduce(addPrices, 0)
+
+console.log( '(09) The sum of all purhcases is: $', sumPurchases.toFixed(2) );
 
 
 // --------------------------------------------------
@@ -328,7 +340,7 @@ console.log( '(09) The sum of all purhcases is:', sumPurchases );
   Otherwise, this number will be negative.
 
   HINT(S):
-  - Unlike 'QUESTION 08' and 'QUESTION 09', here we're interested in both 'sale' and 'purchase' transactions.
+  - Unlike '_QUESTION 08' and '_QUESTION 09', here we're interested in both 'sale' and 'purchase' transactions.
 */
 var netProfit;
 
